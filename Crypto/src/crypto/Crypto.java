@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author mikem
+ * @author Mike Monical
  */
 public class Crypto {
 static Scanner get = new Scanner(System.in);
