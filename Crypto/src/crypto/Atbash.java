@@ -10,6 +10,34 @@ package crypto;
  * @author mikem
  */
 public class Atbash {
+    String text;
+    Atbash(String text) {
+        this.text = text;
     
+    }
+    public String encrypt(){
+        String ret = "";
+        int l = text.length();
+        int i = 0;
+        
+        while (i < l){
+            char c = text.charAt(i);
+            int ic = (int) c;
+            
+            if( ic >= 97 && ic <= 122){
+                ret = ret + (char) (122 - (ic - 97));
+            }
+            else if (ic >= 65 && ic <= 90){
+                ret = ret + (char) (90 - (ic -65));
+            }
+            else
+                ret = ret + c;
+            i++;
+        }
+        
+        return ret;
+    }
+    
+   
     
 }
