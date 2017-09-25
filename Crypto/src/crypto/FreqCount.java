@@ -14,9 +14,10 @@ import java.io.FileReader;
  */
 public class FreqCount {
     private final String inputFile = "C:\\Users\\mikem\\OneDrive\\Documents\\NetBeansProjects\\Crytpo\\Crypto\\src\\crypto\\freqTest.txt";
+    double[] letterCount = new double[26];
     
     public void analyze(){
-        double[] letterCount = new double[26];
+        
         double lc = 0;
         try{
             FileReader fr = new FileReader(inputFile);
@@ -46,6 +47,10 @@ public class FreqCount {
                    System.out.println("input/output exception");
         }
         
+    }
+    
+    public double[] getLetterCount(){
+        return null;
     }
 }
 

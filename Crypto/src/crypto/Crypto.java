@@ -22,7 +22,8 @@ static Scanner get = new Scanner(System.in);
        System.out.println("Please select a menu Option: \n");
        System.out.println("Press 1 for Atbash");
        System.out.println("Press 2 for Frequency Analysis");
-       System.out.println("Press 3 for        ");
+       System.out.println("Press 3 for Vigenere");
+       System.out.println("Press 4 for Index of Coincidence");
        int i = get.nextInt();
        get.nextLine();
         switch (i) {
@@ -33,8 +34,10 @@ static Scanner get = new Scanner(System.in);
                 FreqCount();
                 break;
             case 3:
+                Vigenere();
                 break;
             case 4:
+                Vigenere();
                 break;
             default:
                 break; 
@@ -52,6 +55,30 @@ static Scanner get = new Scanner(System.in);
     private static void FreqCount() {
         FreqCount freq = new FreqCount();
         freq.analyze();
+    }
+
+    private static void Vigenere() {
+        
+        System.out.println("Enter key");
+        String key = get.nextLine().toUpperCase();
+        Vigenere vig = new Vigenere(key);
+        System.out.println("1. Encrypt");
+        System.out.println("2. Decrypt");
+        int choice = get.nextInt();
+
+        if(choice == 1){
+            String encryptedMsg = vig.encrypt();
+            System.out.println("Encrypted message: " + encryptedMsg);
+            System.exit(0);
+        }
+        else if(choice == 2){
+            String decryptedMsg = vig.decrypt();
+            System.out.println("Decrypted message: " + decryptedMsg + "\n");
+            System.exit(0);
+        }
+        else{
+            System.out.println("Invalid Input");
+        }          
     }
     
 }
